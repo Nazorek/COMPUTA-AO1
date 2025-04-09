@@ -25,9 +25,9 @@ int main() {
 
     if(media >= 6) {
         printf("Situacao: Aprovado\n");
-    } else if(media >= 5) {
+    } else if(media >= 6) {
         printf("Situacao: Recuperacao\n");
-    } else {
+    } else{
         printf("Situacao: Reprovado\n");
     }
 
