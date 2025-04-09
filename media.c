@@ -1,14 +1,14 @@
-//digitar primeiro números de notas depois as notas
+
 
 
 
 #include <stdio.h>
 
 int main() {
-    int quantidade;
-    float nota, soma = 0, media;
+    int quantidade, total_aulas, faltas;
+    float nota, soma = 0, media, porcentagem_faltas;
 
-    printf("CALCULO DE MEDIA \n");
+    printf(" CALCULO DE MEDIA COM FALTAS\n");
 
     printf("Informe a quantidade de notas: ");
     scanf("%d", &quantidade);
@@ -21,13 +21,22 @@ int main() {
 
     media = soma / quantidade;
 
-    printf("Media final: %.2f\n", media);
+    printf("Informe o total de aulas: ");
+    scanf("%d", &total_aulas);
 
-    if(media >= 6) {
+    printf("Informe a quantidade de faltas: ");
+    scanf("%d", &faltas);
+
+    porcentagem_faltas = (faltas * 100.0) / total_aulas;
+
+    printf("Media final: %.2f\n", media);
+    printf("Frequencia: %.2f%% de faltas\n", porcentagem_faltas);
+
+    if(media >= 8 && porcentagem_faltas <= 75) {
         printf("Situacao: Aprovado\n");
-    } else if(media >= 6) {
+    } else if(media >= 7 && porcentagem_faltas <= 35) {
         printf("Situacao: Recuperacao\n");
-    } else{
+    } else {
         printf("Situacao: Reprovado\n");
     }
 
